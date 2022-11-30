@@ -4,8 +4,8 @@ import { Button } from '@material-ui/core';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
-//import { useStateValue } from '../SearchProvider.js';
-//import { SET_SEARCH_TERM } from '../types.js';
+import { useStateValue } from '../SearchProvider.js';
+import { SET_SEARCH_TERM } from '../types.js';
 
 const SearchInput = styled.div`
     display: flex;
@@ -51,28 +51,17 @@ const Search = ({ hide }) => {
     const history = useHistory();
 
 
-   //const[dispatch] = useStateValue();   // change
+   const[,dispatch] = useStateValue();   // change
 
     const search = e => {
         e.preventDefault();
-        console.log(input);    // ch
+        dispatch ({ 
+            type: SET_SEARCH_TERM,
+            term: input
+        })    // ch
         history.push("/search") // ch
     }                            // ch
 
-        // dispatch({
-        //     type: SET_SEARCH_TERM,
-        //     term: input
-        // })
-        //console.log(input);     //change   *** may be leave it.
-        //history.push("/search")   //change
-
-
-        // dispatch({
-        //    type: SET_SEARCH_TERM,
-        //   term: input
-        // }
-    //     history.push("/search")
-    // }
     return (
         <form onSubmit={search}>
             <SearchInput>

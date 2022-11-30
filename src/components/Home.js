@@ -2,11 +2,7 @@ import React from 'react';
 
 import AppsIcon from '@material-ui/icons/Apps'; 
 import AvatarIcon from '@material-ui/core/Avatar';
-/*import { ListItemSecondaryAction } from '@material-ui/core'; */
-/*import { FullscreenExit } from '@material-ui/icons';*/
-//import { Button} from '@material-ui/core';
 
-//import { Search } from '@material-ui/icons';
 import styled from 'styled-components';
 import Search  from './Search.js';   //changed *8*
 
